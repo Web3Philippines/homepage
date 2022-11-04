@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         hero: "url('/assets/home/hero.jpg')",
         about: "url('/assets/home/about_section.jpg')",
+        directory: "url('/assets/home/directory_section.jpg')",
       },
       colors: {
         "purple-heart": "#7B3FE4",

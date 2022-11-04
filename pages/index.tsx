@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import Navbar from "../components/Navbar";
@@ -44,6 +45,26 @@ const METRICS = [
 ];
 
 export default function Home() {
+  const [directory, setDirectory] = useState([]);
+
+  useEffect(() => {
+    // temporary
+    let response: any;
+    (async () => {
+      response = await fetch(
+        "https://directory-api.web3philippines.org/api/directory"
+      );
+
+      response = await response.json();
+      response = response.data
+        .filter((e: any) => e.verified)
+        .sort(() => 0.5 - Math.random());
+      response = response.slice(0, 3);
+      console.log(response);
+      setDirectory(response);
+    })();
+  }, []);
+
   return (
     <div>
       <Head>
@@ -182,34 +203,39 @@ export default function Home() {
         </section>
       </section>
 
-      <section className="flex flex-col items-center px-[5vw] py-[10vh]">
-        <h1 className="mb-2 font-futura-black text-3xl text-letters">
-          Web3 Philippines Directory
-        </h1>
-        <p className="mb-8 text-letters">
-          Gathering Filipino Web3 projects for everyoen to Do-Your-Own-Research
-          (DYOR)
-        </p>
+      {/* top level section*/}
+      <section className="bg-directory-white bg-directory bg-cover">
+        <section className="flex flex-col items-center px-[5vw] py-[10vh]">
+          <h1 className="mb-2 font-futura-black text-3xl text-letters">
+            Web3 Philippines Directory
+          </h1>
+          <p className="mb-8 text-letters">
+            Gathering Filipino Web3 projects for everyone to
+            Do-Your-Own-Research (DYOR)
+          </p>
 
-        <div className="w-full max-w-[1200px]">
-          <div className="mb-8 grid w-full grid-cols-3 gap-8">
-            {METRICS.map((e, idx) => (
-              <div
-                className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
-                key={idx}
-              >
-                <h1 className="font-future-black text-6xl">{e.value}</h1>
-                <h2 className="my-4 font-futura-bold text-3xl">{e.name}</h2>
-                <p>{e.description}</p>
-              </div>
-            ))}
+          <div className="w-full max-w-[1200px]">
+            <div className="mb-8 grid w-full grid-cols-3 gap-8">
+              {/* TODO: eliminate any here*/}
+              {directory.length > 0 &&
+                directory.map((e: any, idx: any) => (
+                  <div
+                    className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
+                    key={idx}
+                  >
+                    <h1 className="font-future-black text-6xl">{e.value}</h1>
+                    <h2 className="my-4 font-futura-bold text-3xl">{e.name}</h2>
+                    <p>{e.description}</p>
+                  </div>
+                ))}
+            </div>
+            <Button
+              text="Submit project"
+              action={() => console.log("Submit project")}
+              styling="w-full"
+            />
           </div>
-          <Button
-            text="Join us"
-            action={() => console.log("Join us")}
-            styling="w-full"
-          />
-        </div>
+        </section>
       </section>
 
       <Footer />
