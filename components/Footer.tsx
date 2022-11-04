@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="p-22 w-screen bg-black-pearl">
-      <section className="absolute flex h-[10vh] w-screen items-center justify-between py-4 px-8">
+    <footer className="w-screen bg-black-pearl p-24">
+      <section className="flex h-[10vh] w-full items-center justify-between">
         <img
           className="h-[5vh]"
           src="assets/home/w3phl_logo.svg"
@@ -17,6 +17,17 @@ export default function Footer() {
         */}
           <button className="px-4 hover:underline">Contacts</button>
         </div>
+      </section>
+
+      <section className="flex w-full justify-between">
+        <span>&#169; 2022 Web3 Philippines, All Rights Reserved.</span>
+
+        <span>
+          <span>a</span>
+          <span>a</span>
+          <span>a</span>
+          <span>a</span>
+        </span>
       </section>
     </footer>
   );
