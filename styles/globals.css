@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts */
+@font-face {
+	font-family: Futura Book;
+  font-style: normal;
+	src: url("/assets/fonts/futura/Futura Book font.ttf");
+}
+
+@font-face {
+	font-family: Futura Black;
+  font-style: black;
+	src: url("/assets/fonts/futura/Futura Extra Black font.ttf");
+}
+
 html,
 body {
   padding: 0;
