@@ -1,4 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -47,6 +50,8 @@ const METRICS = [
 export default function Home() {
   const [directory, setDirectory] = useState([]);
 
+  const router = useRouter();
+
   useEffect(() => {
     // temporary
     let response: any;
@@ -91,7 +96,7 @@ export default function Home() {
             <div>
               <Button
                 text="Connect with us"
-                action={() => console.log("Connect with us")}
+                action={() => router.push("/connect")}
                 styling="mt-4 px-8"
               />
             </div>
@@ -130,7 +135,7 @@ export default function Home() {
           </h1>
           <div className="grid w-screen max-w-[1200px] grid-cols-4 gap-24">
             {PARTNERS.map((e, idx) => (
-              <a
+              <Link
                 className="flex items-center justify-center hover:cursor-pointer"
                 key={idx}
                 href={e.link}
@@ -141,7 +146,7 @@ export default function Home() {
                   src={e.imgPath}
                   alt={e.name}
                 />
-              </a>
+              </Link>
             ))}
           </div>
         </section>
@@ -219,14 +224,39 @@ export default function Home() {
               {/* TODO: eliminate any here*/}
               {directory.length > 0 &&
                 directory.map((e: any, idx: any) => (
-                  <div
-                    className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
-                    key={idx}
-                  >
-                    <h1 className="font-future-black text-6xl">{e.value}</h1>
-                    <h2 className="my-4 font-futura-bold text-3xl">{e.name}</h2>
-                    <p>{e.description}</p>
-                  </div>
+                  <Link href={e.links.website.url as string} key={idx}>
+                    {/* TODO: change linking and API response to something better */}
+                    <div className="flex h-full flex-col rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl">
+                      <img
+                        className="h-12 self-end"
+                        src={e.image}
+                        alt={e.name}
+                      />
+                      <div className="flex items-center">
+                        <span className="my-4 font-futura-bold text-xl">
+                          {e.name}
+                        </span>
+                        <img
+                          className="ml-2 h-[12px] w-[12px]"
+                          src="assets/home/check.png"
+                          alt="Verified"
+                        />
+                      </div>
+                      <p className="text-left">
+                        {e.description.substring(0, 100) + "..."}
+                      </p>
+                      <div className="mt-8 flex">
+                        {e.tags.map((e: string, idx: number) => (
+                          <span
+                            className="mr-4 flex text-purple-heart"
+                            key={idx}
+                          >
+                            {e}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
                 ))}
             </div>
             <Button

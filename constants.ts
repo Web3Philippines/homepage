@@ -40,12 +40,5 @@ const PARTNERS = [
     link: "https://twala.io/blockchain/",
   },
 ];
-// bitskwela
-// filipinas
-// ossph
-// pooltogether
-// polyportal
-// scarletbox
-// twala
 
 export { PARTNERS };
