@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import { PARTNERS } from "../constants";
+import { PARTNERS, COLLECTIONS } from "../constants";
 
 const WHAT_TO_EXPECT = [
   {
@@ -47,8 +47,38 @@ const METRICS = [
   { name: "Community Events", value: "20+", description: "Visible executions" },
 ];
 
+// 5 Pillars of Web3 Philippines
+const PILLARS = [
+  {
+    heading: "Community",
+    description:
+      "Building a place for tech and non-tech builders to learn, grow, and thrive in the Web3 space",
+  },
+  {
+    heading: "Education",
+    description:
+      "Finding ways to educate our fellow Filipinos on Web3 topics like engineering, community building, technical writing, soft skills, and more.",
+  },
+  {
+    heading: "Building",
+    description:
+      "Using opensource workflow and principles to build applications, tools, and infrastructure with the vision to make Web3 easier for everyone.",
+  },
+  {
+    heading: "Experience",
+    description:
+      "Leading initatives that will expose Web3 learners to real-life Web3 experiences to grow and build their reputation and credibility.",
+  },
+  {
+    heading: "Opportunities",
+    description:
+      "Connecting intelligent, professional, and trustworthy community contributors to clients and job opportunities.",
+  },
+];
+
 export default function Home() {
   const [directory, setDirectory] = useState([]);
+  const [collections, setCollections] = useState([]);
 
   const router = useRouter();
 
@@ -64,7 +94,7 @@ export default function Home() {
       response = response.data
         .filter((e: any) => e.verified)
         .sort(() => 0.5 - Math.random());
-      response = response.slice(0, 3);
+      response = response.slice(0, 3).sort();
       console.log(response);
       setDirectory(response);
     })();
@@ -96,7 +126,7 @@ export default function Home() {
             <div>
               <Button
                 text="Connect with us"
-                action={() => router.push("/connect")}
+                action={() => router.push("/contacts")}
                 styling="mt-4 px-8"
               />
             </div>
@@ -184,7 +214,7 @@ export default function Home() {
           <h1 className="mb-2 font-futura-black text-3xl text-letters">
             We are continuously growing
           </h1>
-          <p className="mb-8 text-letters">Web3 is now in the Philippines</p>
+          <p className="mb-8 text-letters">Fast and non-stop growth</p>
 
           <div className="w-full max-w-[1200px]">
             <div className="mb-8 grid w-full grid-cols-3 gap-8">
@@ -208,6 +238,55 @@ export default function Home() {
         </section>
       </section>
 
+      {/* top level section */}
+      <section className="w-screen bg-black-pearl">
+        {/* 5 pillars of Web3 Philippines*/}
+        <section className="flex w-full flex-col items-center justify-center px-[5vw] py-[10vh]">
+          {PILLARS.map((e, idx) => (
+            <div className="w-full max-w-[900px]" key={idx}>
+              {idx % 2 === 0 ? (
+                <div className="flex w-full items-center self-start">
+                  <img src="assets/home/shower.png" alt="Glowstick" />
+                  <div>
+                    <h1 className="mb-4 font-futura-bold text-2xl">
+                      {e.heading}
+                    </h1>
+                    <p>{e.description}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex w-full items-center self-end" key={idx}>
+                  <div className="text-right">
+                    <h1 className="mb-4 font-futura-bold text-2xl">
+                      {e.heading}
+                    </h1>
+                    <p>{e.description}</p>
+                  </div>
+                  <img src="assets/home/shower.png" alt="Glowstick" />
+                </div>
+              )}
+            </div>
+          ))}
+        </section>
+
+        {/* subcommunities */}
+        <section className="flex w-screen flex-col items-center bg-cover">
+          <div className="translate-y-24">
+            <h1 className="mb-2 font-futura-black text-3xl text-white">
+              Web3 Philippines Subcommunities
+            </h1>
+            <p className="mb-8 text-center text-letters text-white">
+              Metaverse of Web3's builders ecosystem
+            </p>
+          </div>
+          <img
+            className="w-full"
+            src="assets/home/subcom_desktop.png"
+            alt="Subcommunities"
+          />
+        </section>
+      </section>
+
       {/* top level section*/}
       <section className="bg-directory-white bg-directory bg-cover">
         <section className="flex flex-col items-center px-[5vw] py-[10vh]">
@@ -224,11 +303,15 @@ export default function Home() {
               {/* TODO: eliminate any here*/}
               {directory.length > 0 &&
                 directory.map((e: any, idx: any) => (
-                  <Link href={e.links.website.url as string} key={idx}>
+                  <Link
+                    href={e.links.website.url as string}
+                    key={idx}
+                    target="_blank"
+                  >
                     {/* TODO: change linking and API response to something better */}
                     <div className="flex h-full flex-col rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl">
                       <img
-                        className="h-12 self-end"
+                        className="h-12 self-end font-futura-bold"
                         src={e.image}
                         alt={e.name}
                       />
@@ -261,7 +344,73 @@ export default function Home() {
             </div>
             <Button
               text="Submit project"
-              action={() => console.log("Submit project")}
+              action={() =>
+                router.push("https://directory.web3philippines.org/")
+              }
+              styling="w-full"
+            />
+          </div>
+        </section>
+
+        <section className="flex w-screen flex-col items-center px-[5vw] py-[10vh]">
+          <h1 className="mb-2 font-futura-black text-3xl text-letters">
+            Web3 Philippines Collections
+          </h1>
+          <p className="mb-8 text-letters">
+            Collect Web3 Philippines assets to keep track of your historical
+            moments with us.
+          </p>
+          <section className="grid w-full max-w-[900px] grid-cols-3 gap-4">
+            {/* TODO: change any to specific datatype */}
+            {COLLECTIONS.map((e: any, idx: number) => (
+              <div
+                className="rounded-2xl border-[1px] border-black p-4 text-letters drop-shadow-md"
+                key={idx}
+              >
+                <img className="rounded-2xl" src={e.imgPath} alt={e.name} />
+                <div className="gridp-4 grid grid-cols-[3fr_1fr] p-4">
+                  <span>{e.name}</span>
+                  <span>
+                    <img
+                      className="box-border w-[50px] rounded-lg border-[1px] border-black p-2"
+                      src={e.chainImgPath}
+                      alt={e.name}
+                    />
+                  </span>
+                </div>
+              </div>
+            ))}
+          </section>
+        </section>
+      </section>
+
+      {/* top level section*/}
+      <section className="bg-event bg-cover">
+        <section className="flex flex-col items-center px-[5vw] py-[10vh]">
+          <h1 className="mb-2 font-futura-black text-3xl text-white">
+            Get involved in the community
+          </h1>
+          <p className="mb-8 text-white">
+            Be part of Web3 Philippines from attending events, participating in
+            discussions, or becoming part of the team!
+          </p>
+
+          <div className="w-full max-w-[1200px]">
+            <div className="mb-8 grid w-full grid-cols-4 gap-8">
+              {WHAT_TO_EXPECT.map((e, idx) => (
+                <div
+                  className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
+                  key={idx}
+                >
+                  <img className="w-18" src={e.imgPath} alt={e.name} />
+                  <h2 className="my-4 font-futura-bold text-3xl">{e.name}</h2>
+                  <p>{e.description}</p>
+                </div>
+              ))}
+            </div>
+            <Button
+              text="About us"
+              action={() => console.log("About us")}
               styling="w-full"
             />
           </div>

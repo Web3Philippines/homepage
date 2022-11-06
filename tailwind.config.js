@@ -8,9 +8,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('/assets/home/hero.jpg')",
         about: "url('/assets/home/about_section.jpg')",
         directory: "url('/assets/home/directory_section.jpg')",
+        event: "url('/assets/home/event_section.jpg')",
+        hero: "url('/assets/home/hero.jpg')",
+        ripple: "url('/assets/home/circles.svg')",
       },
       colors: {
         "purple-heart": "#7B3FE4",
