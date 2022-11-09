@@ -297,7 +297,7 @@ export default function Home() {
               Web3 Philippines Subcommunities
             </h1>
             <p className="mb-8 text-center text-letters text-white">
-              Metaverse of Web3's builders ecosystem
+              Metaverse of Web3&lsquo;s builders ecosystem
             </p>
           </div>
           <img
