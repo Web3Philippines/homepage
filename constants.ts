@@ -31,7 +31,7 @@ const PARTNERS = [
   },
   {
     name: "SparkLearn EdTech",
-    imgPath: "assets/home/community_partners/sparklearn.png",
+    imgPath: "assets/home/community_partners/sparklearn.svg",
     link: "https://sparklearn-edtech.com/",
   },
   {

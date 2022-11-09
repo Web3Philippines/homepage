@@ -5,9 +5,10 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Button from "../components/Button";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+
 import { PARTNERS, COLLECTIONS } from "../constants";
 
 const WHAT_TO_EXPECT = [
@@ -76,9 +77,31 @@ const PILLARS = [
   },
 ];
 
+const GET_INVOLVED = [
+  {
+    name: "Speech Bubble",
+    imgPath: "assets/home/bubble.png",
+    description: "Contribute in Web3 community forums",
+  },
+  {
+    name: "Calendar",
+    imgPath: "assets/home/calendar.png",
+    description: "Attend weekly AMAs, monthly workshops, and events",
+  },
+  {
+    name: "People",
+    imgPath: "assets/home/people.png",
+    description: "Build tech and non-tech connections",
+  },
+  {
+    name: "Flag",
+    imgPath: "assets/home/flag.png",
+    description: "Learn from 100% Filipino builder community",
+  },
+];
+
 export default function Home() {
   const [directory, setDirectory] = useState([]);
-  const [collections, setCollections] = useState([]);
 
   const router = useRouter();
 
@@ -110,10 +133,10 @@ export default function Home() {
 
       <Navbar />
 
-      <header className="box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover font-futura">
+      <header className="font-futura box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover">
         <div className="grid h-full w-full max-w-[1600px] grid-cols-2">
           <aside className="flex h-full flex-col justify-center p-8">
-            <h1 className="font-futura-black text-6xl leading-snug">
+            <h1 className="font-futura-bold text-6xl leading-snug">
               Helping Filipinos build in the Web3 space
             </h1>
             <p className="text">
@@ -132,14 +155,12 @@ export default function Home() {
             </div>
           </aside>
 
-          <aside className="flex flex-col items-end justify-center">
-            <div className="h-5/6">
-              <img
-                className="h-full"
-                src="assets/home/phmap.png"
-                alt="Map of the Philippines"
-              />
-            </div>
+          <aside className="flex h-full flex-col items-end justify-center">
+            <img
+              className="h-screen"
+              src="assets/home/phmap.png"
+              alt="Map of the Philippines"
+            />
           </aside>
         </div>
 
@@ -193,7 +214,7 @@ export default function Home() {
             <div className="mb-8 grid w-full grid-cols-4 gap-8">
               {WHAT_TO_EXPECT.map((e, idx) => (
                 <div
-                  className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
+                  className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-black drop-shadow-md"
                   key={idx}
                 >
                   <img className="w-18" src={e.imgPath} alt={e.name} />
@@ -204,7 +225,7 @@ export default function Home() {
             </div>
             <Button
               text="About us"
-              action={() => console.log("About us")}
+              action={() => router.push("/about")}
               styling="w-full"
             />
           </div>
@@ -220,7 +241,7 @@ export default function Home() {
             <div className="mb-8 grid w-full grid-cols-3 gap-8">
               {METRICS.map((e, idx) => (
                 <div
-                  className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
+                  className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md"
                   key={idx}
                 >
                   <h1 className="font-future-black text-6xl">{e.value}</h1>
@@ -230,7 +251,7 @@ export default function Home() {
               ))}
             </div>
             <Button
-              text="Join us"
+              text="Join us (Coming Soon)"
               action={() => console.log("Join us")}
               styling="w-full"
             />
@@ -309,14 +330,14 @@ export default function Home() {
                     target="_blank"
                   >
                     {/* TODO: change linking and API response to something better */}
-                    <div className="flex h-full flex-col rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl">
+                    <div className="flex h-full flex-col rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md hover:cursor-pointer">
                       <img
                         className="h-12 self-end font-futura-bold"
                         src={e.image}
                         alt={e.name}
                       />
                       <div className="flex items-center">
-                        <span className="my-4 font-futura-bold text-xl">
+                        <span className="my-4 font-futura-black text-xl">
                           {e.name}
                         </span>
                         <img
@@ -360,26 +381,33 @@ export default function Home() {
             Collect Web3 Philippines assets to keep track of your historical
             moments with us.
           </p>
-          <section className="grid w-full max-w-[900px] grid-cols-3 gap-4">
-            {/* TODO: change any to specific datatype */}
-            {COLLECTIONS.map((e: any, idx: number) => (
-              <div
-                className="rounded-2xl border-[1px] border-black p-4 text-letters drop-shadow-md"
-                key={idx}
-              >
-                <img className="rounded-2xl" src={e.imgPath} alt={e.name} />
-                <div className="gridp-4 grid grid-cols-[3fr_1fr] p-4">
-                  <span>{e.name}</span>
-                  <span>
-                    <img
-                      className="box-border w-[50px] rounded-lg border-[1px] border-black p-2"
-                      src={e.chainImgPath}
-                      alt={e.name}
-                    />
-                  </span>
+          <section>
+            <div className="grid w-full max-w-[1200px] grid-cols-3 gap-4">
+              {/* TODO: change any to specific datatype */}
+              {COLLECTIONS.map((e: any, idx: number) => (
+                <div
+                  className="rounded-2xl border-[1px] border-black bg-white p-4 text-letters drop-shadow-md"
+                  key={idx}
+                >
+                  <img className="rounded-2xl" src={e.imgPath} alt={e.name} />
+                  <div className="gridp-4 grid grid-cols-[3fr_1fr] p-4">
+                    <span>{e.name}</span>
+                    <span className="flex justify-end">
+                      <img
+                        className="box-border w-[50px] rounded-lg border-[1px] border-black p-2"
+                        src={e.chainImgPath}
+                        alt={e.name}
+                      />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <Button
+              text="See all collections"
+              action={() => router.push("gallery")}
+              styling="w-full mt-4"
+            />
           </section>
         </section>
       </section>
@@ -397,23 +425,22 @@ export default function Home() {
 
           <div className="w-full max-w-[1200px]">
             <div className="mb-8 grid w-full grid-cols-4 gap-8">
-              {WHAT_TO_EXPECT.map((e, idx) => (
+              {GET_INVOLVED.map((e, idx) => (
                 <div
-                  className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-black drop-shadow-md hover:cursor-pointer hover:drop-shadow-xl"
+                  className="rounded-2xl border-[1px] border-white bg-purple-heart p-8 text-white drop-shadow-md"
                   key={idx}
                 >
-                  <img className="w-18" src={e.imgPath} alt={e.name} />
-                  <h2 className="my-4 font-futura-bold text-3xl">{e.name}</h2>
+                  <img className="w-18 mb-4" src={e.imgPath} alt={e.name} />
                   <p>{e.description}</p>
                 </div>
               ))}
             </div>
-            <Button
-              text="About us"
-              action={() => console.log("About us")}
-              styling="w-full"
-            />
           </div>
+        </section>
+
+        {/* TODO: carousel */}
+        <section>
+          <div className="w-full max-w-[1200px]"></div>
         </section>
       </section>
 

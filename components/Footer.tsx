@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const FOOTER_LINKS = [
   {
@@ -24,6 +25,7 @@ const FOOTER_LINKS = [
 ];
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <footer className="w-screen bg-black-pearl p-12">
       <section className="flex h-[10vh] w-full items-center justify-between">
@@ -33,14 +35,35 @@ export default function Footer() {
           alt="Web3 Philippines Logo"
         />
         <div className="flex h-full items-center">
-          <button className="px-4 hover:underline">Home</button>
-          <button className="px-4 hover:underline">About</button>
+          <button
+            className="px-4 hover:underline"
+            onClick={() => router.push("/")}
+          >
+            Home
+          </button>
+          <button
+            className="px-4 hover:underline"
+            onClick={() => router.push("/about")}
+          >
+            About
+          </button>
+          <button
+            className="px-4 hover:underline"
+            onClick={() => router.push("/gallery")}
+          >
+            Gallery
+          </button>
           {/*
         <button className="px-4 hover:underline">Events</button>
         <button className="px-4 hover:underline">Projects</button>
         <button className="px-4 hover:underline">Gallery</button>
         */}
-          <button className="px-4 hover:underline">Contacts</button>
+          <button
+            className="px-4 hover:underline"
+            onClick={() => router.push("/contacts")}
+          >
+            Contacts
+          </button>
         </div>
       </section>
 

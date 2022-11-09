@@ -4,15 +4,20 @@
 
 /* Fonts */
 @font-face {
-	font-family: Futura Book;
-  font-style: normal;
-	src: url("/assets/fonts/futura/Futura Book font.ttf");
+	font-family: "FuturaRegular";
+	src: url("/assets/fonts/futura/Futura Book font.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: Futura Black;
-  font-style: black;
-	src: url("/assets/fonts/futura/Futura Extra Black font.ttf");
+	font-family: "FuturaBold";
+  font-weight: bold;
+	src: url("/assets/fonts/futura/Futura Bold font.ttf");
+}
+
+@font-face {
+	font-family: "FuturaBlack";
+  font-weight: black;
+	src: url("/assets/fonts/futura/Futura Heavy font.ttf");
 }
 
 html,

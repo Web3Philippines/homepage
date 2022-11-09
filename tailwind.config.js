@@ -24,9 +24,9 @@ module.exports = {
         "directory-white": "#F6F1FF",
       },
       fontFamily: {
-        futura: ["Futura Book"],
-        "futura-bold": ["Futura Bold"],
-        "futura-black": ["Futura Black"],
+        "futura-regular": ["FuturaRegular"],
+        "futura-bold": ["FuturaBold"],
+        "futura-black": ["FuturaBlack"],
       },
     },
   },
