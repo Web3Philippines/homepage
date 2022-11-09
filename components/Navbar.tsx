@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
+import { ConnectWallet } from "@thirdweb-dev/react";
 
 export default function Navbar() {
   const router = useRouter();
   return (
-    <nav className="absolute flex h-[10vh] w-screen items-center justify-between py-4 px-8">
+    <nav className="bg-dim absolute flex h-[10vh] w-screen items-center justify-between py-4 px-8">
       <img
         className="h-[5vh]"
         src="assets/home/w3phl_logo.svg"
@@ -39,6 +40,7 @@ export default function Navbar() {
         >
           Contacts
         </button>
+        <ConnectWallet />
       </div>
     </nav>
   );

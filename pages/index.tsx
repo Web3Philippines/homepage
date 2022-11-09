@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import CollectionCard from "../components/CollectionCard";
 
 import { PARTNERS, COLLECTIONS } from "../constants";
 
@@ -244,7 +245,7 @@ export default function Home() {
                   className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md"
                   key={idx}
                 >
-                  <h1 className="font-future-black text-6xl">{e.value}</h1>
+                  <h1 className="font-futura-black text-6xl">{e.value}</h1>
                   <h2 className="my-4 font-futura-bold text-3xl">{e.name}</h2>
                   <p>{e.description}</p>
                 </div>

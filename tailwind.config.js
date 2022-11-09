@@ -15,6 +15,8 @@ module.exports = {
         ripple: "url('/assets/home/circles.svg')",
       },
       colors: {
+        transparent: "rgba(0,0,0,0)",
+        dim: "rgba(0,0,0,0.5)",
         "purple-heart": "#7B3FE4",
         "blue-ribbon": "#016EEA",
         "black-pearl": "#080524",
