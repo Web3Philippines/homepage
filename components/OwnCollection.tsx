@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useAddress, useContract, useOwnedNFTs } from "@thirdweb-dev/react";
 
 import CollectionCard from "../components/CollectionCard";
-import { COLLECTIONS } from "../constants";
+// import { COLLECTIONS } from "../constants";
 
 // TODO: Make sure it's able to handle multichain
 // assets in the future
@@ -22,7 +22,7 @@ export default function OwnCollection() {
 
   const address = useAddress();
 
-  const { data: owned, isLoading, error } = useOwnedNFTs(contract, address);
+  const { data: owned, isLoading } = useOwnedNFTs(contract, address);
 
   console.log("owned", owned);
 

@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { useRef, useState } from "react";
-import { useRouter } from "next/router";
-import { useAddress } from "@thirdweb-dev/react";
 
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -27,9 +25,6 @@ export default function Gallery() {
    */
   const [tab, setTab] = useState(0);
   const searchRef = useRef<HTMLInputElement>(null);
-
-  const router = useRouter();
-  const address = useAddress();
 
   const changeTab = (index: number) => {
     setTab(index);

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import CollectionCard from "../components/CollectionCard";
+// import CollectionCard from "../components/CollectionCard";
 
 import { PARTNERS, COLLECTIONS } from "../constants";
 
