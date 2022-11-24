@@ -7,10 +7,10 @@ import AllCollection from "../components/AllCollection";
 import OwnCollection from "../components/OwnCollection";
 
 const GALLERIES = [
-  {
-    tab: "All Items",
-    body: <AllCollection />,
-  },
+  // {
+  //   tab: "All Items",
+  //   body: <AllCollection />,
+  // },
   {
     tab: "My Items",
     body: <OwnCollection />,
@@ -41,12 +41,12 @@ export default function Gallery() {
       <Navbar />
 
       <main className="min-h-screen w-screen">
-        <section className="w-full bg-directory-white bg-about bg-cover font-futura-regular">
-          <section className="flex w-full flex-col items-center justify-center py-44 text-letters">
-            <h1 className="mb-2 font-futura-black text-3xl text-letters">
+        <section className="min-h-screen w-full bg-directory-white bg-about bg-cover font-futura-regular">
+          <section className="flex w-full flex-col items-center justify-center py-44 px-12 text-letters md:px-0">
+            <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
               Moments with Us
             </h1>
-            <p className="mb-16 text-letters">
+            <p className="mb-16 text-center text-letters">
               Valuable moments you&lsquo;ve spent with us, reminisced with
               digital assets.
             </p>
@@ -57,7 +57,7 @@ export default function Gallery() {
                   <span className="flex font-futura-black text-3xl">
                     {GALLERIES.map((e, idx) => (
                       <h1
-                        className="mr-4 border-b-4 border-transparent hover:cursor-pointer hover:border-purple-heart"
+                        className="border-b-4 border-transparent text-center hover:cursor-pointer hover:border-purple-heart md:mr-4"
                         key={idx}
                         onClick={() => changeTab(idx)}
                       >
@@ -65,12 +65,14 @@ export default function Gallery() {
                       </h1>
                     ))}
                   </span>
+                  {/*
                   <input
                     className="rounded-lg border-2 border-light-letter bg-white px-4 py-2 font-futura-regular"
                     placeholder="Search here"
                     ref={searchRef}
                     type="text"
                   />
+                  */}
                 </header>
                 {/* gallery body depends on tab state*/}
                 <div>{GALLERIES[tab].body}</div>

@@ -33,7 +33,7 @@ export default function OwnCollection() {
   return (
     <>
       {address ? (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {/* TODO: change any to specific datatype */}
           {/* owned?.map((e: any, idx: number) => (
             <CollectionCard
@@ -44,7 +44,11 @@ export default function OwnCollection() {
             />
           ))*/}
           {(owned?.length as number) > 0 && (
-            <a href="https://opensea.io/collection/globe-web3-crash-course-completer">
+            <a
+              href="https://opensea.io/collection/globe-web3-crash-course-completer"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <CollectionCard
                 name={TOKEN_METADATA.name}
                 imgPath={TOKEN_METADATA.imgPath}

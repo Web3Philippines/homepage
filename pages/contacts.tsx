@@ -90,7 +90,7 @@ export default function Contacts() {
       <Navbar />
 
       <header className="font-futura box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover">
-        <div className="grid h-full w-full max-w-[1600px] grid-cols-2">
+        <div className="grid h-full w-full max-w-[1600px] grid-cols-1 md:grid-cols-2">
           <aside className="flex h-full flex-col justify-center p-8">
             <h1 className="font-futura-bold text-6xl leading-snug">
               We want to hear from you!
@@ -113,9 +113,9 @@ export default function Contacts() {
             </div>
           </aside>
 
-          <aside className="flex h-full flex-col items-end justify-center">
+          <aside className="flex h-full flex-col items-end justify-center p-12 md:p-0">
             <img
-              className="h-screen"
+              className="w-auto md:h-screen"
               src="assets/contact/contact.svg"
               alt="Device Art / Graphic"
             />
@@ -142,7 +142,7 @@ export default function Contacts() {
           <h1 className="mb-8 font-futura-black text-3xl text-letters">
             Socials
           </h1>
-          <div className="grid w-full max-w-[900px] grid-cols-3 gap-8">
+          <div className="grid w-full max-w-[900px] grid-cols-1 gap-8 px-8 md:grid-cols-3 md:px-0">
             {SOCIALS.map((e, idx) => (
               <a
                 className="flex rounded-lg border-[1px] border-purple-heart bg-white p-4 drop-shadow-md transition-all hover:scale-[1.04] hover:drop-shadow-lg"

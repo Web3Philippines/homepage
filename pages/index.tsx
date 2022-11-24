@@ -43,7 +43,7 @@ const METRICS = [
   },
   {
     name: "Community Members",
-    value: "7,300+",
+    value: "7,500+",
     description: "Thriving in the community",
   },
   { name: "Community Events", value: "20+", description: "Visible executions" },
@@ -135,9 +135,9 @@ export default function Home() {
       <Navbar />
 
       <header className="font-futura box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover">
-        <div className="grid h-full w-full max-w-[1600px] grid-cols-2">
+        <div className="grid h-full w-full max-w-[1600px] grid-cols-1 md:grid-cols-2">
           <aside className="flex h-full flex-col justify-center p-8">
-            <h1 className="font-futura-bold text-6xl leading-snug">
+            <h1 className="font-futura-bold text-5xl leading-snug drop-shadow-lg md:text-6xl">
               Helping Filipinos build in the Web3 space
             </h1>
             <p className="text">
@@ -156,9 +156,9 @@ export default function Home() {
             </div>
           </aside>
 
-          <aside className="flex h-full flex-col items-end justify-center">
+          <aside className="flex h-full flex-col items-end justify-center p-12 md:p-0">
             <img
-              className="h-screen"
+              className="w-auto md:h-screen"
               src="assets/home/phmap.png"
               alt="Map of the Philippines"
             />
@@ -185,7 +185,7 @@ export default function Home() {
           <h1 className="mb-8 font-futura-black text-3xl text-letters">
             Community Partners
           </h1>
-          <div className="grid w-screen max-w-[1200px] grid-cols-4 gap-24">
+          <div className="grid w-screen max-w-[1200px] grid-cols-2 gap-24 p-8 md:grid-cols-4">
             {PARTNERS.map((e, idx) => (
               <Link
                 className="flex items-center justify-center hover:cursor-pointer"
@@ -204,15 +204,15 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col items-center px-[5vw] py-[10vh]">
-          <h1 className="mb-2 font-futura-black text-3xl text-letters">
+          <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
             Web3 is now in the Philippines
           </h1>
-          <p className="mb-8 text-letters">
+          <p className="mb-8 text-center text-letters">
             Web3 knowledge and experience at your doorstep
           </p>
 
           <div className="w-full max-w-[1200px]">
-            <div className="mb-8 grid w-full grid-cols-4 gap-8">
+            <div className="mb-8 grid w-full grid-cols-1 gap-8 md:grid-cols-4">
               {WHAT_TO_EXPECT.map((e, idx) => (
                 <div
                   className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-black drop-shadow-md"
@@ -233,13 +233,15 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col items-center px-[5vw] py-[10vh]">
-          <h1 className="mb-2 font-futura-black text-3xl text-letters">
+          <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
             We are continuously growing
           </h1>
-          <p className="mb-8 text-letters">Fast and non-stop growth</p>
+          <p className="mb-8 text-center text-letters">
+            Fast and non-stop growth
+          </p>
 
           <div className="w-full max-w-[1200px]">
-            <div className="mb-8 grid w-full grid-cols-3 gap-8">
+            <div className="mb-8 grid w-full grid-cols-1 gap-8 md:grid-cols-3">
               {METRICS.map((e, idx) => (
                 <div
                   className="rounded-2xl border-[1px] border-purple-heart bg-white p-8 text-center text-black drop-shadow-md"
@@ -293,17 +295,25 @@ export default function Home() {
 
         {/* subcommunities */}
         <section className="flex w-screen flex-col items-center bg-cover">
-          <div className="translate-y-24">
-            <h1 className="mb-2 font-futura-black text-3xl text-white">
+          <div className="md:translate-y-24">
+            <h1 className="mb-2 text-center font-futura-black text-3xl text-white">
               Web3 Philippines Subcommunities
             </h1>
             <p className="mb-8 text-center text-letters text-white">
               Metaverse of Web3&lsquo;s builders ecosystem
             </p>
           </div>
+
+          {/* DESKTOP */}
           <img
-            className="w-full"
+            className="hidden w-full md:block"
             src="assets/home/subcom_desktop.png"
+            alt="Subcommunities"
+          />
+          {/* MOBILE */}
+          <img
+            className="w-full md:hidden"
+            src="assets/home/subcom_mobile.png"
             alt="Subcommunities"
           />
         </section>
@@ -312,16 +322,16 @@ export default function Home() {
       {/* top level section*/}
       <section className="bg-directory-white bg-directory bg-cover">
         <section className="flex flex-col items-center px-[5vw] py-[10vh]">
-          <h1 className="mb-2 font-futura-black text-3xl text-letters">
+          <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
             Web3 Philippines Directory
           </h1>
-          <p className="mb-8 text-letters">
+          <p className="mb-8 text-center text-letters">
             Gathering Filipino Web3 projects for everyone to
             Do-Your-Own-Research (DYOR)
           </p>
 
           <div className="w-full max-w-[1200px]">
-            <div className="mb-8 grid w-full grid-cols-3 gap-8">
+            <div className="mb-8 grid w-full grid-cols-1 gap-8 md:grid-cols-3">
               {/* TODO: eliminate any here*/}
               {directory.length > 0 &&
                 directory.map((e: any, idx: any) => (
@@ -375,15 +385,15 @@ export default function Home() {
         </section>
 
         <section className="flex w-screen flex-col items-center px-[5vw] py-[10vh]">
-          <h1 className="mb-2 font-futura-black text-3xl text-letters">
+          <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
             Web3 Philippines Collections
           </h1>
-          <p className="mb-8 text-letters">
+          <p className="mb-8 text-center text-letters">
             Collect Web3 Philippines assets to keep track of your historical
             moments with us.
           </p>
           <section>
-            <div className="grid w-full max-w-[1200px] grid-cols-3 gap-4">
+            <div className="grid w-full max-w-[1200px] grid-cols-1 gap-4 md:grid-cols-3">
               {/* TODO: change any to specific datatype */}
               {COLLECTIONS.map((e: any, idx: number) => (
                 <div
@@ -416,16 +426,16 @@ export default function Home() {
       {/* top level section*/}
       <section className="bg-event bg-cover">
         <section className="flex flex-col items-center px-[5vw] py-[10vh]">
-          <h1 className="mb-2 font-futura-black text-3xl text-white">
+          <h1 className="mb-2 text-center font-futura-black text-3xl text-white">
             Get involved in the community
           </h1>
-          <p className="mb-8 text-white">
+          <p className="mb-8 text-center text-white">
             Be part of Web3 Philippines from attending events, participating in
             discussions, or becoming part of the team!
           </p>
 
           <div className="w-full max-w-[1200px]">
-            <div className="mb-8 grid w-full grid-cols-4 gap-8">
+            <div className="mb-8 grid w-full grid-cols-1 gap-8 md:grid-cols-4">
               {GET_INVOLVED.map((e, idx) => (
                 <div
                   className="rounded-2xl border-[1px] border-white bg-purple-heart p-8 text-white drop-shadow-md"

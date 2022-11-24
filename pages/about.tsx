@@ -146,9 +146,9 @@ export default function About() {
       <Navbar />
 
       <header className="font-futura box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover">
-        <div className="grid h-full w-full max-w-[1600px] grid-cols-2">
+        <div className="grid h-full w-full max-w-[1600px] grid-cols-1 md:grid-cols-2">
           <aside className="flex h-full flex-col justify-center p-8">
-            <h1 className="font-futura-bold text-6xl leading-snug">
+            <h1 className="font-futura-bold text-5xl leading-snug md:text-6xl">
               You can help us with our vision
             </h1>
             <p className="text">
@@ -166,9 +166,9 @@ export default function About() {
             </div>
           </aside>
 
-          <aside className="flex h-full flex-col items-end justify-center">
+          <aside className="flex h-full flex-col items-end justify-center p-12 md:p-0">
             <img
-              className="h-screen"
+              className="w-auto md:h-screen"
               src="assets/about/about.svg"
               alt="Map of the Philippines"
             />
@@ -191,8 +191,8 @@ export default function About() {
 
       {/* top level section*/}
       <section className="w-screen bg-directory-white bg-about bg-cover font-futura-regular">
-        <section className="flex w-full justify-center py-24 text-letters">
-          <div className="w-full max-w-[900px] bg-white p-24 text-center drop-shadow-md">
+        <section className="flex w-full justify-center px-8 py-24 text-letters md:px-0">
+          <div className="w-full max-w-[900px] bg-white p-16 text-center drop-shadow-md md:p-24">
             <h1 className="mb-2 font-futura-black text-3xl text-letters">
               Vision Statement
             </h1>
@@ -215,11 +215,11 @@ export default function About() {
         </section>
 
         <section className="flex w-full justify-center py-24">
-          <div className="w-full max-w-[900px] text-center">
+          <div className="w-full max-w-[900px] px-16 text-center md:px-0">
             <h1 className="mb-8 font-futura-black text-3xl text-letters">
               The Team
             </h1>
-            <div className="grid grid-cols-4 gap-16">
+            <div className="grid grid-cols-1 gap-16 md:grid-cols-4">
               {TEAM.map((e, idx) => (
                 <TeamCard
                   key={idx}

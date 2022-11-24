@@ -27,8 +27,8 @@ const FOOTER_LINKS = [
 export default function Footer() {
   const router = useRouter();
   return (
-    <footer className="w-screen bg-black-pearl p-12">
-      <section className="flex h-[10vh] w-full items-center justify-between">
+    <footer className="flex w-screen flex-col items-center bg-black-pearl p-12 md:block">
+      <section className="mb-8 flex h-[10vh] w-full flex-col items-center justify-between md:mb-0 md:flex-row">
         <img
           className="h-[5vh]"
           src="assets/home/w3phl_logo.svg"
@@ -67,10 +67,12 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="flex w-full justify-between">
-        <span>&#169; 2022 Web3 Philippines, All Rights Reserved.</span>
+      <section className="flex w-full flex-col justify-between md:flex-row">
+        <span className="mb-4 md:mb-0">
+          &#169; 2022 Web3 Philippines, All Rights Reserved.
+        </span>
 
-        <span className="flex flex-row">
+        <span className="flex flex-row justify-center md:justify-start">
           {FOOTER_LINKS.map((e, idx) => (
             <Link className="mx-2" key={idx} href={e.link}>
               <img src={e.imgPath} alt={e.name} />
