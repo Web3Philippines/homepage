@@ -37,7 +37,7 @@ const WHAT_TO_EXPECT = [
 
 const METRICS = [
   {
-    name: "Community Partners",
+    name: "Partners",
     value: 8,
     description: "Helping us with our vision",
   },
@@ -183,7 +183,7 @@ export default function Home() {
       <section className="bg-directory-white bg-about bg-cover">
         <section className="flex flex-col items-center px-[5vw] py-[10vh]">
           <h1 className="mb-8 font-futura-black text-3xl text-letters">
-            Community Partners
+            Partners
           </h1>
           <div className="grid w-screen max-w-[1200px] grid-cols-2 gap-24 p-8 md:grid-cols-4">
             {PARTNERS.map((e, idx) => (
