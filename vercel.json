@@ -1,0 +1,18 @@
+{
+    "cleanUrls": true,
+    "github": {
+        "autoJobCancelation": true
+    },
+    "redirects": [
+        {
+            "source": "/discord",
+            "destination": "https://discord.com/servers/web3-philippines-970915199617990707",
+            "permanent": true
+        },
+        {
+            "source": "/nas",
+            "destination": "https://nas.io/web3philippines",
+            "permanent": true
+        }
+    ]
+}
