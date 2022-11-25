@@ -44,7 +44,10 @@ export default function Navbar() {
           >
             Contacts
           </button>
-          <ConnectWallet />
+          <ConnectWallet 
+            colorMode="light"
+            accentColor="#7B3FE4"
+          />
         </div>
       </nav>
 
