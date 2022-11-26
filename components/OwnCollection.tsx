@@ -8,11 +8,11 @@ import CollectionCard from "../components/CollectionCard";
 // assets in the future
 
 const TOKEN_METADATA = {
-  name: "Globe: Web3 Crash Course Completer",
+  name: "Batangas State University: Web3 Crash Course Completer",
   description:
-    "Proof of Completion for the Globe Web3 Crash Course by Web3 Philippines",
-  imgPath: "assets/collections/wccc.png",
-  address: "0x322E3B923416387bf2409422dC589584Ae8060C9",
+    "Token of Course Completion for students who completed the Web3 Philippines course at Batangas State University",
+  imgPath: "assets/collections/BSU.png",
+  address: "0x4fFed779578D04382Cb06a072f8e3B494E47e51B",
   chain: "polygon",
   chainImgPath: "assets/home/polygon.svg",
 };
@@ -44,11 +44,7 @@ export default function OwnCollection() {
             />
           ))*/}
           {(owned?.length as number) > 0 && (
-            <a
-              href="https://opensea.io/collection/globe-web3-crash-course-completer"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href="#" target="_blank" rel="noreferrer noopener">
               <CollectionCard
                 name={TOKEN_METADATA.name}
                 imgPath={TOKEN_METADATA.imgPath}
