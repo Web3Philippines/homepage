@@ -13,6 +13,11 @@
             "source": "/nas",
             "destination": "https://nas.io/web3philippines",
             "permanent": true
+        },
+        {
+            "source": "/brand-assets",
+            "destination": "https://drive.google.com/drive/folders/1EfWBugjhTLTotZQUsHga5yTCvA6BfA_4?usp=sharing",
+            "permanent": true
         }
     ]
 }
