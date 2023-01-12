@@ -69,7 +69,7 @@ export default function Footer() {
 
       <section className="flex w-full flex-col justify-between md:flex-row">
         <span className="mb-4 md:mb-0">
-          &#169; 2022 Web3 Philippines, All Rights Reserved.
+          &#169; 2023 Web3 Philippines, All Rights Reserved.
         </span>
 
         <span className="flex flex-row justify-center md:justify-start">
