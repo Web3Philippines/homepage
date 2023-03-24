@@ -10,6 +10,11 @@
             "permanent": true
         },
         {
+            "source": "/discordhq",
+            "destination": "https://discord.gg/Qym7TRdUy3",
+            "permanent": true
+        },
+        {
             "source": "/nas",
             "destination": "https://nas.io/web3philippines",
             "permanent": true
