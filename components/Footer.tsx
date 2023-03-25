@@ -26,6 +26,7 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   const router = useRouter();
+  const latestYear = new Date().getFullYear();
   return (
     <footer className="flex w-screen flex-col items-center bg-black-pearl p-12 md:block">
       <section className="mb-8 flex h-[10vh] w-full flex-col items-center justify-between md:mb-0 md:flex-row">
@@ -69,7 +70,7 @@ export default function Footer() {
 
       <section className="flex w-full flex-col justify-between md:flex-row">
         <span className="mb-4 md:mb-0">
-          &#169; 2022 Web3 Philippines, All Rights Reserved.
+          &#169; {latestYear} Web3 Philippines, All Rights Reserved.
         </span>
 
         <span className="flex flex-row justify-center md:justify-start">
