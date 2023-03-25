@@ -185,7 +185,7 @@ export default function Home() {
           <h1 className="mb-8 font-futura-black text-3xl text-letters">
             Partners
           </h1>
-          <div className="grid w-screen max-w-[1200px] grid-cols-2 gap-24 p-8 md:grid-cols-4">
+          <div className="grid w-screen max-w-[1200px] grid-cols-2 gap-16 p-8 md:grid-cols-4">
             {PARTNERS.map((e, idx) => (
               <Link
                 className="flex items-center justify-center hover:cursor-pointer"
