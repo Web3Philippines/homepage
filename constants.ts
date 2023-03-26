@@ -39,6 +39,11 @@ const PARTNERS = [
     imgPath: "assets/home/community_partners/twala.png",
     link: "https://twala.io/blockchain/",
   },
+  {
+    name: "The Round Table",
+    imgPath: "assets/home/community_partners/trt.png",
+    link: "https://trtblockchain.solutions/",
+  },
 ];
 
 const COLLECTIONS = [
