@@ -94,4 +94,100 @@ const COLLECTIONS = [
   },
 ];
 
-export { PARTNERS, COLLECTIONS };
+const WHAT_TO_EXPECT = [
+  {
+    name: "Learn",
+    description: "Get knowledge about Web3.",
+    imgPath: "assets/home/learn.png",
+  },
+  {
+    name: "Experience",
+    description: "Get immersed in the Web3 experience.",
+    imgPath: "assets/home/experience.png",
+  },
+  {
+    name: "Connect",
+    description: "Find like-minded people to learn with.",
+    imgPath: "assets/home/connect.png",
+  },
+  {
+    name: "Get Involved",
+    description: "Contribute to our vision",
+    imgPath: "assets/home/getinvolved.png",
+  },
+];
+
+const GET_INVOLVED = [
+  {
+    name: "Speech Bubble",
+    imgPath: "assets/home/bubble.png",
+    description: "Contribute in Web3 community forums",
+  },
+  {
+    name: "Calendar",
+    imgPath: "assets/home/calendar.png",
+    description: "Attend weekly AMAs, monthly workshops, and events",
+  },
+  {
+    name: "People",
+    imgPath: "assets/home/people.png",
+    description: "Build tech and non-tech connections",
+  },
+  {
+    name: "Flag",
+    imgPath: "assets/home/flag.png",
+    description: "Learn from 100% Filipino builder community",
+  },
+];
+
+const METRICS = [
+  {
+    name: "Partners",
+    value: 8,
+    description: "Helping us with our vision",
+  },
+  {
+    name: "Community Members",
+    value: "7,500+",
+    description: "Thriving in the community",
+  },
+  { name: "Community Events", value: "20+", description: "Visible executions" },
+];
+
+// 5 Pillars of Web3 Philippines
+const PILLARS = [
+  {
+    heading: "Community",
+    description:
+      "Building a place for tech and non-tech builders to learn, grow, and thrive in the Web3 space",
+  },
+  {
+    heading: "Education",
+    description:
+      "Finding ways to educate our fellow Filipinos on Web3 topics like engineering, community building, technical writing, soft skills, and more.",
+  },
+  {
+    heading: "Building",
+    description:
+      "Using opensource workflow and principles to build applications, tools, and infrastructure with the vision to make Web3 easier for everyone.",
+  },
+  {
+    heading: "Experience",
+    description:
+      "Leading initatives that will expose Web3 learners to real-life Web3 experiences to grow and build their reputation and credibility.",
+  },
+  {
+    heading: "Opportunities",
+    description:
+      "Connecting intelligent, professional, and trustworthy community contributors to clients and job opportunities.",
+  },
+];
+
+export {
+  PARTNERS,
+  COLLECTIONS,
+  WHAT_TO_EXPECT,
+  GET_INVOLVED,
+  METRICS,
+  PILLARS,
+};
