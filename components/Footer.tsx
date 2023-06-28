@@ -30,41 +30,45 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center bg-black-pearl p-12 md:block">
       <section className="mb-8 flex h-[10vh] w-full flex-col items-center justify-between md:mb-0 md:flex-row">
-        <img
-          className="h-[5vh]"
-          src="assets/home/w3phl_logo.svg"
-          alt="Web3 Philippines Logo"
-        />
-        <div className="flex h-full items-center">
-          <button
-            className="px-4 hover:underline"
-            onClick={() => router.push("/")}
-          >
-            Home
-          </button>
-          <button
-            className="px-4 hover:underline"
-            onClick={() => router.push("/about")}
-          >
-            About
-          </button>
-          <button
-            className="px-4 hover:underline"
-            onClick={() => router.push("/gallery")}
+        <Link className="cursor-pointer" href="/">
+            <img
+              className="min-w-[100px]"
+              src="assets/home/w3phl_logo.svg"
+              alt="Web3 Philippines Logo"
+              width="110"
+              height="110"
+            />
+          </Link>
+        <div className="flex items-center gap-2 sm:gap-4 md:gap-10">
+          <Link
+            href="/"
+              className="px-4 hover:underline cursor-pointer"
+            >
+              Home
+          </Link>
+          <Link
+                href="/about"
+                className="px-4 hover:underline cursor-pointer"
+              >
+                About
+              </Link>
+          <Link
+            href="/gallery"
+            className="px-4 hover:underline cursor-pointer"
           >
             Gallery
-          </button>
+          </Link>
           {/*
-        <button className="px-4 hover:underline">Events</button>
-        <button className="px-4 hover:underline">Projects</button>
-        <button className="px-4 hover:underline">Gallery</button>
+        <button className=" hover:underline">Events</button>
+        <button className=" hover:underline">Projects</button>
+        <button className=" hover:underline">Gallery</button>
         */}
-          <button
-            className="px-4 hover:underline"
-            onClick={() => router.push("/contacts")}
-          >
-            Contacts
-          </button>
+          <Link
+            href="/contacts"
+              className="px-4 hover:underline"
+            >
+              Contacts
+          </Link>
         </div>
       </section>
 
@@ -73,7 +77,7 @@ export default function Footer() {
           &#169; {latestYear} Web3 Philippines, All Rights Reserved.
         </span>
 
-        <span className="flex flex-row justify-center md:justify-start">
+        <span className="flex flex-row justify-center md:justify-start md:items-center">
           {FOOTER_LINKS.map((e, idx) => (
             <Link className="mx-2" key={idx} href={e.link}>
               <img src={e.imgPath} alt={e.name} />

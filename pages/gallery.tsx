@@ -40,7 +40,7 @@ export default function Gallery() {
 
       <Navbar />
 
-      <main className="min-h-screen w-screen">
+      <main className="">
         <section className="min-h-screen w-full bg-directory-white bg-about bg-cover font-futura-regular">
           <section className="flex w-full flex-col items-center justify-center py-44 px-12 text-letters md:px-0">
             <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
