@@ -35,6 +35,7 @@ a {
 
 * {
   box-sizing: border-box;
+  outline: 1px solid limegreen !important
 }
 
 @media (prefers-color-scheme: dark) {
