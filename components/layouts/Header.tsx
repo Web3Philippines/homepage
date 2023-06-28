@@ -10,7 +10,7 @@ type Props = {
 
 export default function Header({ onRoutesClick }: Props) {
   return (
-    <header className="font-futura box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover">
+    <header className="font-futura box-border flex flex-col items-center bg-hero bg-cover">
       <div className="grid h-full w-full max-w-[1600px] grid-cols-1 md:grid-cols-2">
         <aside className="flex h-full flex-col justify-center p-8">
           <h1 className="font-futura-bold text-5xl leading-snug drop-shadow-lg md:text-6xl">

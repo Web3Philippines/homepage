@@ -28,7 +28,7 @@ export default function Footer() {
   const router = useRouter();
   const latestYear = new Date().getFullYear();
   return (
-    <footer className="flex w-screen flex-col items-center bg-black-pearl p-12 md:block">
+    <footer className="flex flex-col items-center bg-black-pearl p-12 md:block">
       <section className="mb-8 flex h-[10vh] w-full flex-col items-center justify-between md:mb-0 md:flex-row">
         <img
           className="h-[5vh]"

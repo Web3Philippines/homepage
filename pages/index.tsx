@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* top level section */}
-      <section className="w-screen bg-black-pearl">
+      <section className="bg-black-pearl">
         <Pillars />
         <SubCommunities />
       </section>
