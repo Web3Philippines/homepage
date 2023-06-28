@@ -89,7 +89,7 @@ export default function Contacts() {
 
       <Navbar />
 
-      <header className="font-futura box-border flex min-h-screen w-screen flex-col items-center bg-hero bg-cover">
+      <header className="font-futura box-border flex flex-col items-center bg-hero bg-cover">
         <div className="grid h-full w-full max-w-[1600px] grid-cols-1 md:grid-cols-2">
           <aside className="flex h-full flex-col justify-center p-8">
             <h1 className="font-futura-bold text-6xl leading-snug">
@@ -137,7 +137,7 @@ export default function Contacts() {
       </header>
 
       {/* top level section*/}
-      <section className="w-screen bg-directory-white bg-about bg-cover font-futura-regular">
+      <section className="bg-directory-white bg-about bg-cover font-futura-regular">
         <section className="flex w-full flex-col items-center justify-center py-24 text-letters">
           <h1 className="mb-8 font-futura-black text-3xl text-letters">
             Socials

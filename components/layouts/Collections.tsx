@@ -9,7 +9,7 @@ type Props = {
 
 export default function Collections({ onRoutesClick }: Props) {
   return (
-    <section className="flex w-screen flex-col items-center px-[5vw] py-[10vh]">
+    <section className="flex flex-col items-center px-[5vw] py-[10vh]">
       <h1 className="mb-2 text-center font-futura-black text-3xl text-letters">
         Web3 Philippines Collections
       </h1>

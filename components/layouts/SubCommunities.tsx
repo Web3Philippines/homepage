@@ -1,6 +1,6 @@
 export default function SubCommunities() {
   return (
-    <section className="flex w-screen flex-col items-center bg-cover">
+    <section className="flex flex-col items-center bg-cover">
       <div className="md:translate-y-24">
         <h1 className="mb-2 text-center font-futura-black text-3xl text-white">
           Web3 Philippines Subcommunities
