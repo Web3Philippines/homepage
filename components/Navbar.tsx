@@ -14,7 +14,7 @@ export default function Navbar() {
           src="assets/home/w3phl_logo.svg"
           alt="Web3 Philippines Logo"
         />
-        <div className="flex h-full items-center">
+        <div className="flex h-full items-center text-white">
           <button
             className="px-4 hover:underline"
             onClick={() => router.push("/")}

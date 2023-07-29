@@ -263,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* top level section */}
-      <section className="w-screen bg-black-pearl">
+      <section className="w-screen bg-black-pearl text-white">
         {/* 5 pillars of Web3 Philippines*/}
         <section className="flex w-full flex-col items-center justify-center px-[5vw] py-[10vh]">
           {PILLARS.map((e, idx) => (
