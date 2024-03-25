@@ -1,36 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
-        about: "url('/assets/home/about_section.jpg')",
-        directory: "url('/assets/home/directory_section.jpg')",
-        event: "url('/assets/home/event_section.jpg')",
-        hero: "url('/assets/home/hero.jpg')",
-        ripple: "url('/assets/home/circles.svg')",
-      },
-      colors: {
-        transparent: "rgba(0,0,0,0)",
-        dim: "rgba(0,0,0,0.5)",
-        "purple-heart": "#7B3FE4",
-        "blue-ribbon": "#016EEA",
-        "black-pearl": "#080524",
-        letters: "#1C1C1E",
-        "about-gradient": "#D3BCFA",
-        "light-letter": "#8E8E8F",
-        "directory-white": "#F6F1FF",
+        hero: "url('./assets/images/hero.jpg')",
       },
       fontFamily: {
-        "futura-regular": ["FuturaRegular"],
-        "futura-bold": ["FuturaBold"],
-        "futura-black": ["FuturaBlack"],
+        poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      colors: {
+        "bg-gray": "#F1F4F6",
+        "bg-black": "#0E0E16",
+        "bg-black-2": "#181822",
+        "bg-purple": "#7B3FE4",
+        "text-gray": "#9292BF",
+        "text-gray-2": "#525355",
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
