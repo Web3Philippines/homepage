@@ -1,28 +1,3 @@
 {
-    "cleanUrls": true,
-    "github": {
-        "autoJobCancelation": true
-    },
-    "redirects": [
-        {
-            "source": "/discord",
-            "destination": "https://discord.gg/4xbJEBKWKc",
-            "permanent": true
-        },
-        {
-            "source": "/discordhq",
-            "destination": "https://discord.gg/Qym7TRdUy3",
-            "permanent": true
-        },
-        {
-            "source": "/nas",
-            "destination": "https://nas.io/web3philippines",
-            "permanent": true
-        },
-        {
-            "source": "/brand-assets",
-            "destination": "https://drive.google.com/drive/folders/1EfWBugjhTLTotZQUsHga5yTCvA6BfA_4?usp=sharing",
-            "permanent": true
-        }
-    ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
