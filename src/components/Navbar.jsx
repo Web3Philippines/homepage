@@ -40,7 +40,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 30) {
         // Change 100 to the desired scroll height
         setScrolled(true);
       } else {
