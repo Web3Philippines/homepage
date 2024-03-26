@@ -41,8 +41,8 @@ const Navbar = () => {
     <nav
       className={
         isMenuOpen
-          ? "flex justify-center max-md:justify-between fixed top-6 left-1/2 transform -translate-x-1/2 p-2 z-10 w-fit max-md:w-full max-md:bg-bg-purple"
-          : "flex justify-center max-md:justify-between fixed top-6 left-1/2 transform -translate-x-1/2 p-2 z-10 w-fit max-md:w-full"
+          ? "flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full max-md:bg-bg-purple"
+          : "flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full"
       }
     >
       <Link to="/home">
@@ -61,7 +61,7 @@ const Navbar = () => {
       />
       {/* className="max-md:hidden font-poppins font-semibold flex justify-center gap-10 p-2 text-lg bg-white border border-slate-100 rounded-full" */}
       {(!isTablet || isMenuOpen) && (
-        <ul className="custom-shadow font-poppins font-semibold flex justify-center gap-10 p-2 text-lg bg-white border border-slate-100 rounded-full max-md:flex-col max-md:w-full max-md:bg-bg-purple max-md:text-white max-md:absolute max-md:top-20 max-md:left-0 max-md:rounded-none max-md:border-none max-md:p-0 max-md:gap-0">
+        <ul className="custom-shadow font-poppins font-semibold flex justify-center gap-10 p-2 text-lg max-md:text-xl bg-white border border-slate-100 rounded-full max-md:flex-col max-md:w-full max-md:bg-bg-purple max-md:text-white max-md:absolute max-md:top-20 max-md:left-0 max-md:rounded-none max-md:border-none max-md:p-0 max-md:gap-0 max-md:h-svh">
           <Link
             className={`hover:bg-slate-200 hover:rounded-full max-md:hover:rounded-none max-md:hover:bg-slate-200 max-md:hover:bg-opacity-50 ${
               activeLink === "/home" && !isTablet ? "active-link" : ""
