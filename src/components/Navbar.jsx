@@ -62,7 +62,7 @@ const Navbar = () => {
           ? `flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full max-md:bg-bg-purple`
           : `flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full ${
               scrolled ? "max-md:bg-bg-gray" : "max-md:bg-transparent"
-            } transition duration-300 ease-in-out`
+            } transition duration-300 ease-in-out max-md:rounded-b-3xl`
       }
     >
       <Link to="/home">
