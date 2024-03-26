@@ -21,6 +21,7 @@ const Navbar = () => {
   };
 
   const [isTablet, setIsTablet] = useState(window.innerWidth < 768);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     // Function to set the isDesktop state based on the window width
@@ -37,12 +38,31 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        // Change 100 to the desired scroll height
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
       className={
         isMenuOpen
-          ? "flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full max-md:bg-bg-purple"
-          : "flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full"
+          ? `flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full max-md:bg-bg-purple`
+          : `flex justify-center max-md:justify-between fixed top-6 max-md:top-0 left-1/2 transform -translate-x-1/2 p-2 max-md:pt-6 max-md:px-6 z-10 w-fit max-md:w-full ${
+              scrolled ? "max-md:bg-bg-gray" : "max-md:bg-transparent"
+            } transition duration-300 ease-in-out`
       }
     >
       <Link to="/home">
