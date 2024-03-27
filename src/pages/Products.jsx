@@ -14,7 +14,7 @@ const Products = () => {
           <h2
             className={`${gradientText} text-2xl max-md:text-lg font-inter font-bold p-2`}
           >
-            Our Buidls
+            Our Builds
           </h2>
           <h1 className="futura-bold-text text-4xl max-md:text-2xl p-2">
             Crafted for the Web3 Innovator
