@@ -50,7 +50,7 @@ const Home = () => {
             if (itemsToRender[2].includes(product.title)) {
               return (
                 <ProductCard
-                  width={"col-span-3 max-md:col-span-2 row-span-1"}
+                  width={"col-span-4 max-md:col-span-4 row-span-1"}
                   key={index}
                   product={product}
                 />
@@ -58,7 +58,7 @@ const Home = () => {
             } else if (itemsToRender.includes(product.title)) {
               return (
                 <ProductCard
-                  width={"col-span-2 row-span-1"}
+                  width={"col-span-3 max-md:col-span-4 row-span-1"}
                   key={index}
                   product={product}
                 />
@@ -67,7 +67,7 @@ const Home = () => {
               return null;
             }
           })}
-          <div className="bg-bg-black-2 shadow-lg rounded-lg p-5 flex flex-col items-center justify-center gap-y-10 max-md:gap-y-1 max-md:col-span-2">
+          <div className="bg-bg-black-2 shadow-lg rounded-lg p-5 flex flex-col items-center justify-center gap-y-10 max-md:gap-y-1 max-md:col-span-4">
             <img
               className="w-[240px] max-md:w-[120px] mx-auto"
               src={arrow}
