@@ -1,4 +1,5 @@
 import React from "react";
+import contactData from "../data/contactData";
 
 const Contact = () => {
   let gradientText =
@@ -6,45 +7,37 @@ const Contact = () => {
   return (
     <div className="custom-shadow flex flex-col text-center bg-bg-gray w-full rounded-[32px] p-10 gap-5 max-md:mt-28 max-lg:mt-28">
       <h2 className={`${gradientText} text-2xl font-inter font-bold`}>
-        Get in Touch
+        Contact Us
       </h2>
       <h1 className="header-color futura-bold-text text-4xl p-2 max-md:text-sm">
-        Your Voice Matters to Us
+        Get in touch with the Web3 Philippines
       </h1>
-      <p className="content-color font-poppins font-thin text-lg max-md:text-xs max-lg:text-sm">
-        Reach out and let's start a conversation!
-      </p>
-      <form className="flex flex-col w-full mx-auto gap-5" action="">
-        <div className="flex gap-5">
-          <input
-            className="w-1/2 rounded-2xl py-6 pr-2 pl-10 max-md:h-[60px] max-md:pl-5 max-md:pr-0 max-md:text-xs"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Name"
-          />
-          <input
-            className="w-1/2 rounded-2xl py-6 pr-2 pl-10 max-md:h-[60px] max-md:pl-5 max-md:pr-0 max-md:text-xs"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-          />
+      <div className="grid grid-cols-3 md:grid-cols-3 gap-24 mt-10 mx-auto max-md:grid-cols-2 max-md:gap-4 max-md:pb-5 max-xl:gap-8 max-2xl:gap-16">
+          {contactData.map((contact, index) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center rounded-3xl w-[375px] h-[400px] bg-[#f9f9f9] gap-y-8 max-md:w-[150px] max-md:h-[190px] max-md:gap-y-2 max-lg:w-[165px] max-lg:h-[300px] max-lg:gap-y-4 max-xl:w-[220px] max-xl:gap-y-6 max-2xl:w-[280px]"
+              >
+                <div className="w-40 flex justify-center rounded-full max-md:w-14 max-lg:w-24 max-xl:w-28">
+                  <img src={contact.icon} alt={contact.name} />
+                </div>
+                <div className="flex flex-col items-center gap-y-4 text-center">
+                  <h1 className="header-color text-2xl font-medium font-poppins max-md:text-sm max-lg:text-sm max-xl:text-xl">
+                    {contact.name}
+                  </h1>
+                </div>
+                <div>
+                  <button className="w-[240px] bg-[#7B3FE4] text-[#f9f9f9] px-[30px] py-[16px] rounded-lg text-base cursor-pointer text-center">
+                    <a href={contact.url} target="_blank">
+                      {contact.buttonText}
+                    </a>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <textarea
-          className="w-full rounded-2xl py-6 pr-2 pl-10 max-md:pl-5 max-md:text-xs"
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Message"
-        ></textarea>
-        <input
-          className="bg-bg-purple text-white cursor-pointer w-full rounded-2xl py-6 max-md:w-full max-md:py-4 max-md:text-sm"
-          type="submit"
-          value="Send Message"
-        />
-      </form>
     </div>
   );
 };
