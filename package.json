@@ -1,7 +1,7 @@
 {
-  "name": "web3philippines-homepage-v4",
+  "name": "homepage",
   "private": true,
-  "version": "0.0.0",
+  "version": "4.0.0",
   "homepage": ".",
   "type": "module",
   "scripts": {
@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hotjar/browser": "^1.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.22.0",
