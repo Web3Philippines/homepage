@@ -22,7 +22,7 @@ const contactData = [
         icon: Discord,
         name: "Discord",
         buttonText: `Join Server`,
-        url: "",
+        url: "https://discord.com/invite/web3-philippines-970915199617990707",
     },
     {
         icon: facebookPage,
