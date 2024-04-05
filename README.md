@@ -24,7 +24,7 @@ Web3 Philippines Homepage is licensed under [GNU General Public License v3.0](ht
 
 ## 📝 Author
 
-Web3 Philippines Homepage is developed and maintained by [Web3 Philippines](https://web3philippines.org), [OSS Philippines](https://ossph.org) and [Wareneutron Devs](https://wareneutron.com) with the help of awesome [contributors](https://github.com/web3phl/homepage/graphs/contributors).
+Web3 Philippines Homepage is developed and maintained by [Web3 Philippines](https://web3philippines.org), [OSS Philippines](https://ossph.org) and [WG Technology Labs](https://wgtechlabs.com) with the help of awesome [contributors](https://github.com/web3phl/homepage/graphs/contributors).
 
 [![contributors](https://contrib.rocks/image?repo=web3phl/homepage)](https://github.com/web3phl/homepage/graphs/contributors)
 
