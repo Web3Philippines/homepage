@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import HomeContents from "../components/HomeContents";
 // import Faqs from "../components/Faqs";
 import ProductCard from "../components/ProductCard";
@@ -23,10 +24,12 @@ const Home = () => {
           <p className="font-poppins font-normal text-xl my-6 max-md:text-xs">
             Master the skills to innovate and lead in the web3 landscape.
           </p>
-          <GradientButton
-            buttonValue="Connect with us"
-            gradientText={gradientText}
-          />
+          <Link to="/contact">
+            <GradientButton
+              buttonValue="Connect with us"
+              gradientText={gradientText}
+            />
+          </Link>
         </div>
       </div>
 
